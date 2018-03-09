@@ -4,7 +4,7 @@ Bien, este proyecto es una API REST creada sobre el framework CODEIGNITER.
 
 Si te descargas el proyecto, simplemente tendras que crear una base de datos llamada diccionario, con una tabla diccionario y las columnas, id, nombre, descripcion para poder usarla.
 
-Para usar este proyecto tienes que colocarlo en una carpeta sobre /var/www/html/*'carpeta'* y para comprobar si funciona podemos hacer una petición get desde el navegador colocando en la url localhost/*'carpeta'*/index.php/diccionario
+Para usar este proyecto tienes que colocarlo en una carpeta sobre /var/www/html/*carpeta* y para comprobar si funciona podemos hacer una petición get desde el navegador colocando en la url localhost/*carpeta*/index.php/diccionario
 
 Nuestro proyecto es la base del framework CODEIGNITER y le hemos implementado el proyecto de esta plataforma github del usuario chriskacerguis --> https://github.com/chriskacerguis/codeigniter-restserver
 
@@ -20,3 +20,11 @@ Hemos creado un modelo, llamado Diccionario_model.php, que es quien obtiene los 
 Hemos creado tambien un controlador, llamado Diccionario.php, que es quien llama al modelo para obtener los datos.
 
 Podemos obtener, mandar, actualizar y borrar datos de la base de datos con la herramienta curl.
+
+Obtenemos datos con: curl -X GET -H 'Content-Type: application/json' localhost/*carpeta*/index.php/diccionario
+
+Mandamos datos con: curl -X POST -H 'Content-Type: application/json' -d '{"nombre":"unnombre":"descripcion":"unadescripcion"}' localhost/*carpeta*/index.php/diccionario
+
+Actualizamos datos con: curl -X PUT -H 'Content-Type: application/json' -d '{"nombre":"unnombre":"descripcion":"unadescripcion"}' localhost/*carpeta*/index.php/diccionario/*id*
+
+Borramos datos con: curl -X DELETE -H 'Content-Type: application/json' localhost/*carpeta*/index.php/diccionario/*id*
